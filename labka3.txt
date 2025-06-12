@@ -1,0 +1,265 @@
+task1
+#include <iostream>
+ 
+using namespace std;
+ 
+int main(){
+ 
+    int n;
+ 
+    cin >> n;
+ 
+    int sum=0;
+ 
+    int arr[n];
+ 
+    for(int i=0; i<n; i++){
+ 
+        cin >> arr[i];
+ 
+    }
+ 
+    for(int i=0; i<n; i++){
+ 
+        sum+=arr[i];
+ 
+    }
+ 
+    cout << sum;
+ 
+    return 0;
+ 
+}
+ 
+task2
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+    int min = arr[0];
+    int max = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < min) min = arr[i];
+        if (arr[i] > max) max = arr[i];
+    }
+    cout << "min element is " << min << endl;
+    cout << "max element is " << max << endl;
+    return 0;
+}
+ 
+task3
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+    int n;
+    cin >> n;
+    vector<int> arr(n);
+    vector<int> even;
+    vector<int> odd;
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+        if (arr[i] % 2 == 0) {
+            even.push_back(arr[i]);
+        } else {
+            odd.push_back(arr[i]);
+        }
+    }
+    cout << "There are " << even.size() << " even numbers" << endl;
+    cout << "There are " << odd.size() << " odd numbers" << endl;
+    return 0;
+}
+task4
+#include <iostream>
+#include <vector>
+using namespace std;
+ 
+int main() {
+    int n;
+    cin >> n;
+ 
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+ 
+    cout << "Reversed array: ";
+    for (int i = n - 1; i >= 0; i--) {
+        cout << arr[i] << " ";
+    }
+ 
+    cout << endl;
+    return 0;
+}
+task5
+#include <iostream>
+#include <vector>
+using namespace std;
+ 
+int main() {
+    int n, target;
+    cin >> n;
+ 
+    vector<int> arr(n);
+    for (int i = 0; i < n; i++) {
+        cin >> arr[i];
+    }
+ 
+    cin >> target;
+ 
+    bool found = false;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == target) {
+            cout << "Index: " << i << endl;
+            found = true;
+            break; 
+        }
+    }
+ 
+    if (!found) {
+        cout << "not found" << endl;
+    }
+ 
+    return 0;
+}
+task6
+#include <iostream>
+using namespace std;
+ 
+int main() {
+    const int size = 3;
+    int matrix1[size][size], matrix2[size][size], result[size][size];
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            cin >> matrix1[i][j];
+        }
+    }
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            cin >> matrix2[i][j];
+        }
+    }
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            result[i][j] = matrix1[i][j] + matrix2[i][j];
+        }
+    }
+ 
+    for (int i = 0; i < size; i++) {
+        for (int j = 0; j < size; j++) {
+            cout << result[i][j] << " ";
+        }
+        cout << endl;
+    }
+ 
+    return 0;
+}
+task7
+#include <iostream> 
+using namespace std;
+int main() {
+   int matrix[3][3];
+   for (int i = 0; i < 3; ++i) {
+       for (int j = 0; j < 3; ++j) {
+           cin >> matrix[i][j];
+       }
+   }
+   for (int j = 0; j < 3; ++j) { 
+       for (int i = 0; i < 3; ++i) { 
+           cout << matrix[i][j] << " ";
+       }
+       cout << endl; 
+   }
+   return 0; 
+}
+task8
+#include <iostream>
+using namespace std;
+int main() {
+    int arr[4][4];
+
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            cin >> arr[i][j];
+        }
+    }
+
+    int sum1 = 0;
+    int sum2 = 0;
+    int sum3 = 0;
+    int sum4 = 0;
+    for (int i = 0; i < 4; i++) {
+        sum1 += arr[i][0];
+        sum2 += arr[i][1];
+        sum3 += arr[i][2];
+        sum4 += arr[i][3];
+    }
+
+    int biggestsum[4] = {sum1, sum2, sum3, sum4};
+    int bgsum = biggestsum[0];
+    for (int k = 1; k < 4; k++) {
+        if (biggestsum[k] > bgsum) {
+            bgsum = biggestsum[k];
+        }
+    }
+    cout << bgsum << endl;
+
+    return 0;
+}
+task 9
+#include <iostream>
+#include <vector>
+using namespace std;
+int main() {
+   vector<vector<int>> matrix(4, vector<int>(4));
+   for (int i = 0; i < 4; ++i) {
+       for (int j = 0; j < 4; ++j) {
+           cin >> matrix[i][j];
+       }
+   }
+
+   for (int i = 0; i < 4; ++i) {
+       cout << " " << matrix[i][i];
+   }
+
+   for (int i = 0; i < 4; ++i) {
+       cout << " " << matrix[i][3 - i];
+   }
+   cout << std::endl;
+   return 0;
+}
+
+task10
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main() {
+   int n;
+   cin >> n;
+   vector<int> arr(n);
+   for (int i = 0; i < n; ++i) {
+       cin >> arr[i];
+   }
+   for (int i = 0; i < n - 1; ++i) {
+       for (int j = 0; j < n - i - 1; ++j) {
+           if (arr[j] > arr[j + 1]) {
+               swap(arr[j], arr[j + 1]);
+           }
+       }
+   }
+   for (int i = 0; i < n; ++i) {
+       cout << arr[i];
+       if (i < n - 1) {
+           cout << " ";
+       }
+   }
+   cout << endl;
+   return 0;
+}
